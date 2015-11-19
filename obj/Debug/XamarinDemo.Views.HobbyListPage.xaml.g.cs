@@ -17,15 +17,11 @@ namespace XamarinDemo {
     public partial class HobbyListPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button Button1;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView HobbyListView;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(HobbyListPage));
-            Button1 = this.FindByName <global::Xamarin.Forms.Button>("Button1");
             HobbyListView = this.FindByName <global::Xamarin.Forms.ListView>("HobbyListView");
         }
     }
