@@ -18,7 +18,7 @@ namespace XamarinDemo
 			database.CreateTable<Stock> ();
 		}
 
-		#region Hobby
+		#region Hobby Methods
 		public IList<Hobby> GetHobbies()
 		{
 			return database.Table<Hobby> ().ToList ();
@@ -42,9 +42,9 @@ namespace XamarinDemo
 		{
 			return this.database.Delete (item);
 		}
-		#endregion Hobby
+		#endregion Hobby Methods
 
-		#region Stock
+		#region Stock Methods
 		public IList<Stock> GetStocks()
 		{
 			return database.Table<Stock> ().ToList ();
@@ -63,7 +63,7 @@ namespace XamarinDemo
 		{
 			return this.database.Delete (item);
 		}
-		#endregion Stock
+		#endregion Stock Methods
 	}
 }
 

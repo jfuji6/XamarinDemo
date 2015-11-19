@@ -12,17 +12,6 @@ namespace XamarinDemo
 	{
 		public ObservableCollection<Stock> StockList{ get; set;}
 
-		private bool _isLoading;
-		public bool IsLoading{
-			get{ return _isLoading; }
-			set {
-				if (_isLoading != value){
-					_isLoading = value;
-					onPropertyChanged ();
-				}
-			}
-		}
-
 		public StockListViewModel ()
 		{
 			InitData ();
@@ -30,45 +19,49 @@ namespace XamarinDemo
 
 		private void InitData()
 		{
-			IsLoading = true;
 			StockList = new ObservableCollection<Stock> (App.Database.GetStocks ());
 			if (StockList.Count < 3) {
-				Stock stock = new Stock {
-					ProductDescription = "Short Product Description",
-					LocationName = "San Diego Storage",
-					Quantity = 123,
-					ProductNumber = "P000012345",
-					ID=0
-						
-				};
-				App.Database.SaveStock (stock);
-				StockList.Add (stock);
-
-				stock = new Stock {
-					ProductDescription = "Medium Product Description " +
-						"Lorem ipsum dolor sit amet, consectetur adipiscing " +
-						"elit, sed do eiusmod tempor incididunt ut labore et ",
-
-					LocationName = "San Diego Storage",
-					Quantity = 23,
-					ProductNumber = "P000067890",
-					ID=0				};
-				App.Database.SaveStock (stock);
-				StockList.Add (stock);
-
-				stock = new Stock {
-					ProductDescription = "Long Product Description " +
-						"Lorem ipsum dolor sit amet, consectetur adipiscing " +
-						"elit, sed do eiusmod tempor incididunt ut labore et " +
-						"dolore magna aliqua. Ut enim ad minim veniam, quis " +
-						"nostrud exercitation ullamco laboris",
-					LocationName = "San Diego Storage",
-					Quantity = 1,
-					ProductNumber = "P0000223344",
-					ID=0				};
-				App.Database.SaveStock (stock);
-				StockList.Add (stock);
+				PopulateDatabase ();
 			}
+		}
+
+		public void PopulateDatabase()
+		{
+			Stock stock = new Stock {
+				ProductDescription = "Short Product Description",
+				LocationName = "San Diego Storage",
+				Quantity = 123,
+				ProductNumber = "P000012345",
+				ID=0
+
+			};
+			App.Database.SaveStock (stock);
+			StockList.Add (stock);
+
+			stock = new Stock {
+				ProductDescription = "Medium Product Description " +
+					"Lorem ipsum dolor sit amet, consectetur adipiscing " +
+					"elit, sed do eiusmod tempor incididunt ut labore et ",
+
+				LocationName = "San Diego Storage",
+				Quantity = 23,
+				ProductNumber = "P000067890",
+				ID=0				};
+			App.Database.SaveStock (stock);
+			StockList.Add (stock);
+
+			stock = new Stock {
+				ProductDescription = "Long Product Description " +
+					"Lorem ipsum dolor sit amet, consectetur adipiscing " +
+					"elit, sed do eiusmod tempor incididunt ut labore et " +
+					"dolore magna aliqua. Ut enim ad minim veniam, quis " +
+					"nostrud exercitation ullamco laboris",
+				LocationName = "San Diego Storage",
+				Quantity = 1,
+				ProductNumber = "P0000223344",
+				ID=0				};
+			App.Database.SaveStock (stock);
+			StockList.Add (stock);
 		}
 	}
 }

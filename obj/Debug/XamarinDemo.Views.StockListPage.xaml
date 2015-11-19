@@ -1,28 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-xmlns="http://xamarin.com/schemas/2014/forms" 
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="XamarinDemo.StockListPage"
->
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness">
-      <OnPlatform.iOS>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinDemo.StockListPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness">
+			<OnPlatform.iOS>
         10, -20, 10, 0
       </OnPlatform.iOS>
-      <OnPlatform.Android>
+			<OnPlatform.Android>
         10, -40, 10, 0
       </OnPlatform.Android>
-      <OnPlatform.WinPhone>
+			<OnPlatform.WinPhone>
         0, 0, 0, 0
       </OnPlatform.WinPhone>
-    </OnPlatform>
-  </ContentPage.Padding>
+		</OnPlatform>
+	</ContentPage.Padding>
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Form" x:Name="FormButton" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout >
-			<ActivityIndicator IsRunning="{Binding IsLoafding}" IsVisible="{Binding IsLoading}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+		<StackLayout>
 			<ListView x:Name="StockListView" ItemsSource="{Binding StockList}" VerticalOptions="StartAndExpand" HasUnevenRows="true" SeparatorColor="Gray">
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -38,16 +33,11 @@ x:Class="XamarinDemo.StockListPage"
 									<ColumnDefinition Width="Auto" />
 									<ColumnDefinition Width="Auto" />
 								</Grid.ColumnDefinitions>
-								<Label Text="{Binding ProductNumber}" FontSize="20" FontAttributes="Bold" 
-								Grid.Row="0" Grid.Column="0" />
-								<Label Text="{Binding ProductDescription}" FontSize="12" 
-								Grid.Row="1" Grid.Column="0" />
-								<Label Text="{Binding LocationName}" FontSize="12" TextColor="Maroon" 
-								Grid.Row="2" Grid.Column="0" />
-								<Label Text="QTY:" VerticalOptions="Center" TextColor="Lime"
-								Grid.Row="1" Grid.Column="1" />
-								<Label Text="{Binding Quantity}" VerticalOptions="Center" TextColor="Lime"
-								Grid.Row="1" Grid.Column="2" />
+								<Label Text="{Binding ProductNumber}" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
+								<Label Text="{Binding ProductDescription}" FontSize="12" Grid.Row="1" Grid.Column="0" />
+								<Label Text="{Binding LocationName}" FontSize="12" TextColor="Maroon" Grid.Row="2" Grid.Column="0" />
+								<Label Text="QTY:" VerticalOptions="Center" TextColor="Lime" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" />
+								<Label Text="{Binding Quantity}" VerticalOptions="Center" TextColor="Lime" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" />
 							</Grid>
 						</ViewCell>
 					</DataTemplate>

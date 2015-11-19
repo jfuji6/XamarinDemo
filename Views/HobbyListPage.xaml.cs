@@ -16,7 +16,6 @@ namespace XamarinDemo
 			hobbyListViewModel = new HobbyListViewModel ();
 			BindingContext = hobbyListViewModel;
 			HobbyListView.ItemTapped += HobbyListView_ItemTapped;
-
 		}
 
 		void HobbyListView_ItemTapped (object sender, ItemTappedEventArgs e)
@@ -32,6 +31,7 @@ namespace XamarinDemo
 				parent.Title = pageTitle;
 			}
 		}
+
 	}
 }
 

@@ -18,8 +18,7 @@ namespace XamarinDemo
 				_hobby = new Hobby {
 					Name = "N/A",
 					Description = "N/A",
-					Blurb = "N/A",
-					Image = "defaultImage.png"
+					Blurb = "N/A"
 				};
 			}
 			BindingContext = _hobby;

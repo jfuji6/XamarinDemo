@@ -8,7 +8,13 @@ namespace XamarinDemo
 {
 	public partial class FormPage : ContentPage
 	{
-		public const string alertTitle = "Closing Form";
+		//TODO Extrat to resource file.
+		private const string alertTitle = "Form Submitted";
+		private const string dateFormat = "MM/dd/yyyy";
+		private const string switchText = "Switch Enabled: ";
+		private const string nameLabel = "Name: ";
+		private const string alertButtonText = "OK";
+
 		public FormPage ()
 		{
 			InitializeComponent ();
@@ -18,15 +24,15 @@ namespace XamarinDemo
 		async void  SubmitButton_Clicked (object sender, EventArgs e)
 		{
 			StringBuilder sb = new StringBuilder ();
-			sb.Append ("Name: ")
+			sb.Append (nameLabel);
 			sb.Append (NameEntry.Text);
 			sb.Append ("\n");
-			sb.Append (FormDatePicker.Date.ToString ("MM/dd/yyyy"));
+			sb.Append (FormDatePicker.Date.ToString (dateFormat));
 			sb.Append ("\n");
-			sb.Append ("Switch Enabled: ");
+			sb.Append (switchText);
 			sb.Append ( ActiveSwitch.IsToggled.ToString() );
 			sb.Append ("\n");
-			await DisplayAlert(alertTitle, sb.ToString(), "Ok");
+			await DisplayAlert(alertTitle, sb.ToString(), alertButtonText);
 			await Navigation.PopModalAsync();
 		}
 	}
