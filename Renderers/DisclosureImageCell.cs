@@ -7,9 +7,9 @@ namespace XamarinDemo
 	public class DisclosureImageCell : ImageCell
 	{
 		public static readonly BindableProperty DisclosureProperty =
-			BindableProperty.Create<DisclosureImageCell, bool>(p => p.Disclosure, false);
+			BindableProperty.Create<DisclosureImageCell, bool>(p => p.DisclosureEnabled, false);
 
-		public bool Disclosure{
+		public bool DisclosureEnabled{
 			get{ return (bool)base.GetValue (DisclosureProperty); }
 			set{ base.SetValue (DisclosureProperty, value); }
 		}

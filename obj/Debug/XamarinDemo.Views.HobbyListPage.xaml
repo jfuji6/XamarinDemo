@@ -22,7 +22,7 @@ xmlns:local="clr-namespace:XamarinDemo;assembly=XamarinDemo">
 			<ListView x:Name="HobbyListView" ItemsSource="{Binding HobbyList}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" VerticalOptions="StartAndExpand">
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<local:DisclosureImageCell Disclosure="true" ImageSource="{Binding Image}" Text="{Binding Name}" Detail="{Binding Blurb}" />
+						<local:DisclosureImageCell DisclosureEnabled="true" ImageSource="{Binding Image}" Text="{Binding Name}" Detail="{Binding Blurb}" />
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
