@@ -12,7 +12,7 @@ namespace XamarinDemo
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		protected virtual void onPropertyChanged( [CallerMemberName] string propertyName = null )
+		protected virtual void OnPropertyChanged( [CallerMemberName] string propertyName = null )
 		{
 			// Saving handler is best practice in case of multi-threading 
 			PropertyChangedEventHandler handler = PropertyChanged;

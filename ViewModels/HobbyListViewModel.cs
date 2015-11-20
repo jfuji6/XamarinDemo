@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.ComponentModel;
-using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-// using System.Windows.Input;
-using Xamarin.Forms;
+//using Xamarin.Forms;
 
 
 namespace XamarinDemo
@@ -22,14 +20,13 @@ namespace XamarinDemo
 			set{
 				if (_selectedItem != value){
 					_selectedItem = value;
-					onPropertyChanged ();
+					OnPropertyChanged ();
 				}
 			}
 		}
 
 		public HobbyListViewModel ()
 		{
-			//TODO find a better place to load data 
 			InitData ();
 		}
 
@@ -65,7 +62,7 @@ namespace XamarinDemo
 				Image = "tech.png",
 				ID = 0
 			};
-			App.Database.SaveHobby (hobby);
+		    App.Database.SaveHobby (hobby);
 			HobbyList.Add (hobby);
 
 			hobby = new Hobby {

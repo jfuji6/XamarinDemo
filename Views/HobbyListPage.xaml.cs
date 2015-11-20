@@ -13,11 +13,10 @@ namespace XamarinDemo
 		public HobbyListPage ()
 		{
 			InitializeComponent ();
-			// TODO Should this should be moved to a lifecycle event so that the view is completely constructed 
-			// and able to respond to changes?
 			hobbyListViewModel = new HobbyListViewModel ();
 			BindingContext = hobbyListViewModel;
 			HobbyListView.ItemTapped += HobbyListView_ItemTapped;
+
 		}
 
 		void HobbyListView_ItemTapped (object sender, ItemTappedEventArgs e)
