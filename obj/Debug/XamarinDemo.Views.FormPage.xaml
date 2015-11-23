@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinDemo.FormPage" Title="Form">
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Submit" x:Name="SubmitButton" />
+		<ToolbarItem Text="Submit"  x:Name="SubmitButton" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<Grid VerticalOptions="StartAndExpand" Padding="20,20,20,0">
