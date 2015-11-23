@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+x:Class="XamarinDemo.HobbyListPage"
+xmlns:local="clr-namespace:XamarinDemo;assembly=XamarinDemo">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness">
+			<OnPlatform.iOS>
+	      		10, 10, 0, 0
+	      	</OnPlatform.iOS>
+			<OnPlatform.Android>
+	        	10, 10, 10, 0
+	      	</OnPlatform.Android>
+			<OnPlatform.WinPhone>
+	        	0, 0, 0, 0
+	      	</OnPlatform.WinPhone>
+		</OnPlatform>
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout>
+			<ListView x:Name="HobbyListView" ItemsSource="{Binding HobbyList}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" VerticalOptions="StartAndExpand">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<local:DisclosureImageCell DisclosureEnabled="true" ImageSource="{Binding Image}" Text="{Binding Name}" Detail="{Binding Blurb}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
